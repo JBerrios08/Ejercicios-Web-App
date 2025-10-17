@@ -1,27 +1,27 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Ejercicio.aspx.cs" Inherits="WebApp.Ejercicio" %>
+<%@ Page Title="Ejercicio" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Ejercicio.aspx.cs" Inherits="WebApp.Ejercicio" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <h3>Ejercicio 1</h3>
+<asp:Content ID="ContentMain" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="card shadow-sm mt-4">
+                <div class="card-header bg-primary text-white d-flex align-items-center">
+                    <i class="fa-solid fa-calculator me-2" aria-hidden="true"></i>
+                    <h1 class="h5 mb-0">Ejercicio 1</h1>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <asp:Label ID="Label1" runat="server" AssociatedControlID="num" CssClass="form-label" Text="Ingresa un número"></asp:Label>
+                        <asp:TextBox ID="num" runat="server" CssClass="form-control" TextMode="Number" />
+                        <span class="form-text text-muted">El resultado mostrará el cubo del valor ingresado.</span>
+                    </div>
+                    <div class="mb-3">
+                        <asp:Label ID="sal" runat="server" CssClass="form-control-plaintext fw-semibold text-muted" EnableViewState="false" Text="Ingresa un número y presiona &quot;Calcular&quot;."></asp:Label>
+                    </div>
+                </div>
+                <div class="card-footer bg-light text-end">
+                    <asp:Button ID="Button1" runat="server" Text="Calcular" CssClass="btn btn-success" OnClick="Button1_Click" />
+                </div>
+            </div>
         </div>
-        <div>
-            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-            <asp:TextBox ID="num" runat="server"></asp:TextBox>
-        </div>
-        <div>
-            <asp:Label ID="sal" runat="server" Text="Label"></asp:Label>
-        </div>
-        <div>
-            <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
-        </div>
-    </form>
-</body>
-</html>
+    </div>
+</asp:Content>
