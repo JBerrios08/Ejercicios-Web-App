@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System;
 
 namespace WebApp
 {
@@ -22,7 +17,16 @@ namespace WebApp
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            sal.Text = cubo(double.Parse(num.Text)).ToString();
+            double valor;
+            if (double.TryParse(num.Text, out valor))
+            {
+                double resultado = cubo(valor);
+                sal.Text = $"El cubo de {valor:N2} es {resultado:N2}.";
+            }
+            else
+            {
+                sal.Text = "Por favor, ingresa un número válido.";
+            }
         }
     }
 }
