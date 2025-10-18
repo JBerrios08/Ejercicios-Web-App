@@ -1,21 +1,139 @@
-﻿/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    margin-top: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
+:root {
+    color-scheme: light;
 }
 
-/* Set widths on the form inputs since otherwise they're 100% wide */
-input,
-select,
-textarea {
-    max-width: 280px;
+* {
+    box-sizing: border-box;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    .body-content {
-        padding: 0;
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #1f2933;
+}
+
+.layout {
+    min-height: 100vh;
+}
+
+.main-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 16px 48px;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.page-title {
+    font-size: clamp(2rem, 2.5vw + 1rem, 3rem);
+    text-align: center;
+    margin: 0;
+    color: #0b7285;
+}
+
+.exercise-grid {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.exercise-card {
+    flex: 1 1 0;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+    min-width: 0;
+}
+
+.exercise-card h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+    color: #0f172a;
+}
+
+.exercise-card p {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #52606d;
+}
+
+.exercise-card label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1f2933;
+}
+
+.exercise-card input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd2d9;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 16px;
+    transition: border-color 0.2s ease;
+}
+
+.exercise-card input[type="text"]:focus {
+    outline: none;
+    border-color: #0b7285;
+    box-shadow: 0 0 0 2px rgba(11, 114, 133, 0.2);
+}
+
+.exercise-card button,
+.exercise-card input[type="submit"],
+.exercise-card .aspNetDisabled {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(135deg, #0b7285, #1098ad);
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.exercise-card button:hover,
+.exercise-card input[type="submit"]:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 16px rgba(16, 152, 173, 0.25);
+}
+
+.result {
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background-color: #e6f6ff;
+    color: #0f172a;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+}
+
+.result.success {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.result.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+@media (max-width: 960px) {
+    .exercise-grid {
+        flex-direction: column;
+    }
+
+    .exercise-card {
+        width: 100%;
     }
 }
